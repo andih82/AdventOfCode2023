@@ -3,9 +3,9 @@ package aoc
 import kotlin.math.max
 
 data class Game(val id: Int) {
-    var green = 0;
-    var red = 0;
-    var blue = 0;
+    var green = 0
+    var red = 0
+    var blue = 0
 
     operator fun invoke(sets: List<String>): Game {
         sets.map { e ->
@@ -34,10 +34,10 @@ fun main() {
     //part1
     println(games.filter { g ->
         g.green <= 13 && g.red <= 12 && g.blue <= 14
-    }.map { it.id }.sum())
+    }.sumOf { it.id })
     //part2
-    println(games.map { g ->
+    println(games.sumOf { g ->
         g.green * g.blue * g.red
-    }.sum())
+    })
 }
 

@@ -15,7 +15,7 @@ data class Card(val id: Int, val winningNumber: List<Int>, val myNumber: List<In
     var copies = 1
 
     val winningPoint
-        get() = myNumber.filter { it in winningNumber }.count()
+        get() = myNumber.count { it in winningNumber }
 
     fun calcPart1() =
         (2.0).pow(winningPoint - 1.0).toInt()
@@ -29,7 +29,7 @@ class Day4 : Day(4) {
         return Card(line.drop(4).takeWhile { it != ':' }.trim().toInt(), l, r)
     }
 
-    fun solvePart1() = puzzle.map { toCard(it).calcPart1() }.sum()
+    fun solvePart1() = puzzle.sumOf { toCard(it).calcPart1() }
 
     fun solvePart2() =
         puzzle.map { toCard(it) }

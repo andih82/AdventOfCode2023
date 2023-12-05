@@ -28,13 +28,13 @@ class Day3 : Day(3) {
             var value = ""
             endedLine.forEachIndexed { pos, c ->
                 when {
-                    c == '.' -> if (!value.isEmpty()) {
+                    c == '.' -> if (value.isNotEmpty()) {
                         potentialParts.add(Pos(idx, pos - value.length, value))
                         value = ""
                     }
                     c.isDigit() -> value += c
                     !c.isDigit() -> {
-                        if (!value.isEmpty()) {
+                        if (value.isNotEmpty()) {
                             potentialParts.add(Pos(idx, pos - value.length, value))
                             value = ""
                         }

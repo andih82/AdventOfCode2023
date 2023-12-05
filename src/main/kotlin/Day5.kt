@@ -24,10 +24,8 @@ class Day5 : Day(5) {
 
                 line[0].isDigit() -> {
                     val tempRange = line.split(" ").map { it.toLong() }
-                    forwardList.last()
-                        .put(LongRange(tempRange[1], tempRange[1] + tempRange[2] - 1), tempRange[0] - tempRange[1])
-                    backwardList.last()
-                        .put(LongRange(tempRange[0], tempRange[0] + tempRange[2] - 1), tempRange[1] - tempRange[0])
+                    forwardList.last()[LongRange(tempRange[1], tempRange[1] + tempRange[2] - 1)] = tempRange[0] - tempRange[1]
+                    backwardList.last()[LongRange(tempRange[0], tempRange[0] + tempRange[2] - 1)] = tempRange[1] - tempRange[0]
 
                 }
 
