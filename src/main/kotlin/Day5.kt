@@ -6,13 +6,10 @@ class Day5 : Day(5) {
 
     val seeds = mutableListOf<Long>()
     val seedsAsRange = mutableListOf<LongRange>()
-    var backwardList: MutableList<MutableMap<LongRange, Long>>
-    var forwardList: MutableList<MutableMap<LongRange, Long>>
+    var backwardList: MutableList<MutableMap<LongRange, Long>> = mutableListOf()
+    var forwardList: MutableList<MutableMap<LongRange, Long>> = mutableListOf()
 
     init {
-        backwardList = mutableListOf()
-        forwardList = mutableListOf()
-
         puzzle.forEach { line ->
             when {
                 line.isEmpty() -> Unit
