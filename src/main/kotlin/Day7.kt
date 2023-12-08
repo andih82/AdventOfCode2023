@@ -61,7 +61,7 @@ class Day7 : Day(7) {
 
 fun main() {
     val day7 = Day7()
-    println(day7.hands1.sorted().mapIndexed { idx, hand -> hand(idx)  }.sum())
-    println(day7.hands2.sorted().mapIndexed { idx, hand -> hand(idx) }.sum())
+    println(day7.hands1.sorted().mapIndexed { idx, hand -> hand(idx+1)  }.sum())
+    println(day7.hands2.sorted().mapIndexed { idx, hand -> hand(idx+1) }.sum())
 
 }
